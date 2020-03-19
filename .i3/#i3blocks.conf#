@@ -1,0 +1,108 @@
+separator_block_width=8
+
+[memory]
+label=Mem:
+command=/usr/share/i3blocks/memory
+separator=false
+interval=30
+color=#FFFFFF
+
+[swap]
+label=Swap:
+command=/usr/share/i3blocks/memory swap
+interval=30
+color=#FFFFFF
+
+[Weather]
+#command=~/.config/i3/IconicWeather.sh "10001"
+#interval=1800
+#color=#FFFFFF
+
+
+[mail]
+#label=
+#command=~/.i3/.mail.sh.x
+#interval=100
+#color=#7F00FF
+
+[disk-root]
+#label=:
+#command=/usr/share/i3blocks/disk
+#interval=30
+#color=#E95420
+
+
+[disk-home]
+#label=HOME:
+#command=/usr/share/i3blocks/disk $HOME
+#interval=30
+#color=#FFFFFF
+
+[ssid]
+label=
+command=echo "$(iw dev wlp1s0 link | grep SSID | cut -d " " -f 2-)"
+color=#d33682
+interval=5
+separator=false
+
+[wireless]
+label=IP:
+command="$(ip -br address | grep UP | cut -d " " -f 25)"
+color=#FFFFFF
+interval=10
+
+
+[ethernet]
+#label=E
+#instance=enp2s0
+#command=/usr/share/i3blocks/network
+#color=#FFFFFF
+#interval=10
+
+[strength]
+command=echo "$(iw dev wlp1s0 link | grep signal | cut -d " " -f 2-)"
+interval=10
+color=#FFFFFF
+
+[temp]
+label=Temp:
+command=echo "$(sensors k10temp-pci-00c3 -u | grep temp1_input| cut -d ":" -f 2-) °C"
+interval=10
+color=#FFFFFF
+
+[cpu]
+label=CPU
+command=
+interval=10
+min_width=CPU: 100.00%
+color=#FFFFFF
+#separator=false
+
+[battery]
+#label=BAT
+#label=⚡
+#command=/usr/share/i3blocks/battery
+#command=~/.i3/battery BAT0
+#interval=30
+
+[load]
+label=Load:
+command=/usr/share/i3blocks/load_average
+interval=10
+color=#FFFFFF
+
+
+[volume]
+label=
+command=/usr/share/i3blocks/volume
+#command=~/.i3/volume-usb
+interval=2
+signal=10
+color=#FFFFFF
+
+
+[time]
+#command-date " %a %m-%d-%y %l:%M:%S %p"
+command=date '+%A %Y-%m-%d %H:%M:%S'
+interval=5
+color=#FFFFFF
